@@ -15,19 +15,21 @@ export const VentureCard: React.FC<VentureCardProps> = ({ title, desc, tags, col
   return (
     <div className="h-full flex flex-col justify-between z-10 relative">
       <div>
-        <h3 className="text-3xl font-bold mb-2 dark:text-white text-zinc-900">{title}</h3>
-        <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 text-lg">{desc}</p>
+        {/* Adjusted Title Text Size: text-xl on mobile, text-3xl on desktop */}
+        <h3 className="text-xl md:text-3xl font-bold mb-2 dark:text-white text-zinc-900">{title}</h3>
+        {/* Adjusted Description Text Size: text-sm on mobile, text-lg on desktop */}
+        <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 text-sm md:text-lg">{desc}</p>
       </div>
       <div className="flex flex-wrap gap-2 mt-auto">
         {tags.map((tag) => (
-          <span key={tag} className="px-3 py-1 text-xs font-medium rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">
+          <span key={tag} className="px-3 py-1 text-[10px] md:text-xs font-medium rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">
             {tag}
           </span>
         ))}
       </div>
       {/* Decorative Gradient Blob */}
       <div 
-        className="absolute -right-10 -bottom-10 w-40 h-40 blur-3xl rounded-full pointer-events-none transition-all opacity-20 group-hover:opacity-30"
+        className="absolute -right-10 -bottom-10 w-32 h-32 md:w-40 md:h-40 blur-3xl rounded-full pointer-events-none transition-all opacity-20 group-hover:opacity-30"
         style={{ backgroundColor: accentColor }}
       />
     </div>
